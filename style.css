@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+}
+
+.app{
+    width:100%;
+    max-width:420px;
+    background:white;
+    min-height:100vh;
+    position:relative;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+    color:#e53935;
+}
+
+.icons span{
+    margin-left:10px;
+    font-size:18px;
+}
+
+/* HERO */
+.hero{
+    background:#e53935;
+    color:white;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:20px;
+}
+
+.hero p{
+    font-size:13px;
+    margin-top:6px;
+}
+
+/* PROMO */
+.promo{
+    padding:15px;
+}
+
+.promo h3{
+    margin-bottom:12px;
+}
+
+.promo-card{
+    background:#e53935;
+    color:white;
+    border-radius:12px;
+    display:flex;
+    overflow:hidden;
+}
+
+.promo-text{
+    padding:15px;
+    flex:1;
+}
+
+.promo-text h4{
+    margin-bottom:10px;
+}
+
+.promo-text ul{
+    font-size:12px;
+    line-height:1.6;
+}
+
+.promo-card img{
+    width:120px;
+    object-fit:cover;
+}
+
+/* OFFER */
+.offer{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.offer-icon{
+    width:60px;
+    height:60px;
+    background:#ff5252;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    margin:0 auto 10px;
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    max-width:420px;
+    background:white;
+    border-top:1px solid #ddd;
+    display:flex;
+    justify-content:space-around;
+    padding:10px 0;
+}
+
+.bottom-nav div{
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+
+.bottom-nav .active{
+    color:#e53935;
+    font-weight:600;
+}
