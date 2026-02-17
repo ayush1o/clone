@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airpaz Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app auth-page">
+        <header class="header">
+            <a class="back-link" href="index.html">← Back</a>
+            <div class="logo">Airpaz</div>
+            <div></div>
+        </header>
+
+        <main class="auth-content">
+            <h2>Welcome to Airpaz</h2>
+
+            <section id="choose-step" class="auth-card hidden">
+                <h3>Do you want to open an account?</h3>
+                <p>Create an account first, then login with your Gmail and password.</p>
+                <div class="stack-buttons">
+                    <button id="start-open" class="primary-btn" type="button">Open Account</button>
+                    <button id="start-login" class="secondary-btn" type="button">Go to Login</button>
+                </div>
+            </section>
+
+            <section id="open-step" class="auth-card hidden">
+                <h3>Open Account</h3>
+                <form id="open-form" class="auth-form">
+                    <label>Name<input type="text" name="name" required></label>
+                    <label>Date of Birth<input type="date" name="dob" required></label>
+                    <label>Number<input type="tel" name="number" required></label>
+                    <label>Gmail<input type="email" name="email" required></label>
+                    <label>Password<input type="password" name="password" minlength="6" required></label>
+                    <button class="primary-btn" type="submit">Create Account</button>
+                </form>
+            </section>
+
+            <section id="login-step" class="auth-card hidden">
+                <h3>Login</h3>
+                <form id="login-form" class="auth-form">
+                    <label>Gmail<input type="email" name="loginEmail" required></label>
+                    <label>Password<input type="password" name="loginPassword" required></label>
+                    <button class="primary-btn" type="submit">Login</button>
+                </form>
+            </section>
+
+            <p id="auth-message" class="auth-message"></p>
+        </main>
+    </div>
+
+    <script>
+        const chooseStep = document.getElementById('choose-step');
+        const openStep = document.getElementById('open-step');
+        const loginStep = document.getElementById('login-step');
+        const authMessage = document.getElementById('auth-message');
+
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get('mode');
+
+        function showStep(step, clearMessage = true) {
+            chooseStep.classList.add('hidden');
+            openStep.classList.add('hidden');
+            loginStep.classList.add('hidden');
+            step.classList.remove('hidden');
+            if (clearMessage) authMessage.textContent = '';
+        }
+
+        if (mode === 'open') {
+            showStep(openStep);
+        } else if (mode === 'login') {
+            showStep(loginStep);
+        } else {
+            showStep(chooseStep);
+        }
+
+        document.getElementById('start-open').addEventListener('click', () => showStep(openStep));
+        document.getElementById('start-login').addEventListener('click', () => showStep(loginStep));
+
+        document.getElementById('open-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            authMessage.textContent = 'Account created successfully. Please login now.';
+            showStep(loginStep, false);
+        });
+
+        document.getElementById('login-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            authMessage.textContent = 'Login successful. Welcome back!';
+        });
+    </script>
+</body>
+</html>

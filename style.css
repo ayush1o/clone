@@ -54,6 +54,35 @@ body{
     margin-top:6px;
 }
 
+.auth-actions{
+    margin-top:16px;
+    display:flex;
+    gap:10px;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:none;
+    border-radius:8px;
+    padding:10px 14px;
+    font-size:14px;
+    text-decoration:none;
+    text-align:center;
+    cursor:pointer;
+}
+
+.primary-btn{
+    background:#fff;
+    color:#e53935;
+    font-weight:600;
+}
+
+.secondary-btn{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.8);
+}
+
 /* PROMO */
 .promo{
     padding:15px;
@@ -130,5 +159,86 @@ body{
 
 .bottom-nav .active{
     color:#e53935;
+    font-weight:600;
+}
+
+/* AUTH PAGE */
+.auth-page{
+    padding-bottom:20px;
+}
+
+.back-link{
+    color:#e53935;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.auth-content{
+    padding:16px;
+}
+
+.auth-content h2{
+    margin-bottom:12px;
+}
+
+.auth-card{
+    background:#fff8f8;
+    border:1px solid #ffd4d4;
+    border-radius:10px;
+    padding:14px;
+    margin-top:12px;
+}
+
+.auth-card h3{
+    margin-bottom:8px;
+}
+
+.stack-buttons{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.auth-form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.auth-form label{
+    display:flex;
+    flex-direction:column;
+    font-size:13px;
+    color:#333;
+    gap:5px;
+}
+
+.auth-form input{
+    border:1px solid #ccc;
+    border-radius:6px;
+    padding:10px;
+    font-size:14px;
+}
+
+.auth-form .primary-btn{
+    background:#e53935;
+    color:#fff;
+}
+
+.auth-card .secondary-btn{
+    background:#fff;
+    color:#e53935;
+    border:1px solid #e53935;
+}
+
+.hidden{
+    display:none;
+}
+
+.auth-message{
+    margin-top:12px;
+    color:#e53935;
+    font-size:14px;
     font-weight:600;
 }
